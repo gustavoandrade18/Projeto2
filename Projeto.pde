@@ -16,8 +16,7 @@ String[] categorias = {
 };
 Elemento[] artigo1 = {
   new Elemento("TITLE", "Um titulo daora", 50),
-  new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds", 120),
-  new Elemento("IMAGE", "landscape1.jpeg", 200)
+  new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds", 120)
 };
 
 Elemento[] artigo2 = {
@@ -134,7 +133,6 @@ void draw() {
     // Exibe os cartões da categoria ativa
     for (Cartao cartaoAtivo : cartoes.get(categoriaAtiva)) {
       boolean estaSobreCartao = mouseEstaSobre(220, 220 + 800, cartaoAtivo.y, cartaoAtivo.y + 200);
-      print(estaSobreCartao);
       if(flagMousePressed && estaSobreCartao) telaAtual = 1;
       artigoAtivo = cartaoAtivo.artigo;
       cartaoAtivo.display();

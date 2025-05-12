@@ -29,7 +29,8 @@ String[][] titulos = {
   {"Empório Kaminski", "Feira do Largo da Ordem"},
   {"Museu Oscar Niemeyer", "Solar do Rosário"},
   {"Jardim Botânico", "Parque Barigui"},
-  {"Feira do Água Verde", "Feira do Batel"}
+  {"Feira do Água Verde", "Feira do Batel"},
+  {}
 };
 
 // URLs ou nomes dos arquivos de imagem para cada cartão
@@ -37,7 +38,8 @@ String[][] URLImagens = {
   {"kaminski.jpg", "largo.jpg"},
   {"mon.jpg", "solar.jpg"},
   {"botanico.jpg", "barigui.jpg"},
-  {"aguaverde.jpg", "batel.jpg"}
+  {"aguaverde.jpg", "batel.jpg"},
+  {}
 };
 
 // Descrições dos cartões para cada categoria
@@ -45,7 +47,8 @@ String[][] descricoes = {
   {"kaminski", "largo"},
   {"mon", "solar"},
   {"botanico", "barigui"},
-  {"água verde", "batel"}
+  {"água verde", "batel"},
+  {}
 };
 
 // Configuração de layout dos itens de menu

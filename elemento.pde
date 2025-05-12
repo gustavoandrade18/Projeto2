@@ -22,7 +22,7 @@ class Elemento{
         text(this.conteudo, 200, this.offset); 
         break;
       case "IMAGE": 
-        image(loadImage(this.conteudo), 200, this.offset); 
+        image(loadImage("./imagens/" + this.conteudo), 200, this.offset); 
         break;
     }
   

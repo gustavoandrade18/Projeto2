@@ -16,7 +16,8 @@ String[] categorias = {
 };
 Elemento[] artigo1 = {
   new Elemento("TITLE", "Um titulo daora", 50),
-  new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds", 120)
+  new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds", 120),
+  new Elemento("IMAGE", "landscape1.jpeg", 200)
 };
 
 Elemento[] artigo2 = {

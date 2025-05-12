@@ -80,8 +80,7 @@ void setup() {
 }
 
 void draw() {
-  background(255); // Fundo branco
-
+  background(#EAF6FF); // Fundo branco
   boolean hovering = false; // Controla se o mouse está sobre alguma categoria
 
   // Renderiza os botões das categorias

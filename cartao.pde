@@ -28,7 +28,7 @@ class Cartao {
     desenharSombraRect(220, this.y, 800, 200, 20, 7, 5);
 
     // Desenha o retângulo principal do cartão
-    fill(230); 
+    fill(#D6EEFF); 
     rect(220, this.y, 800, 200, 20); // Cartão com bordas arredondadas
 
     // Desenha a imagem à esquerda do cartão

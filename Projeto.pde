@@ -26,29 +26,26 @@ Elemento[] artigo2 = {
 };
 // Títulos dos cartões para cada categoria
 String[][] titulos = {
-  {"titulo1Cat1"},
-  {"titulo1Cat2", "titulo2Cat2", "titulo2Cat1"},
-  {"titulo1Cat3", "titulo2Cat3"},
-  {"titulo1Cat4", "titulo2Cat4"},
-  {}
+  {"Empório Kaminski", "Feira do Largo da Ordem"},
+  {"Museu Oscar Niemeyer", "Solar do Rosário"},
+  {"Jardim Botânico", "Parque Barigui"},
+  {"Feira do Água Verde", "Feira do Batel"}
 };
 
 // URLs ou nomes dos arquivos de imagem para cada cartão
 String[][] URLImagens = {
-  {"landscape1.jpeg"},
-  {"landscape2.jpg", "landscape1.jpeg", "landscape2.jpg"},
-  {"landscape1.jpeg", "landscape2.jpg"},
-  {"landscape1.jpeg", "landscape2.jpg"},
-  {}
+  {"kaminski.jpg", "largo.jpg"},
+  {"mon.jpg", "solar.jpg"},
+  {"botanico.jpg", "barigui.jpg"},
+  {"aguaverde.jpg", "batel.jpg"}
 };
 
 // Descrições dos cartões para cada categoria
 String[][] descricoes = {
-  {"descricao1Cat1"},
-  {"descricao1Cat2", "descricao2Cat2", "descricao2Cat1"},
-  {"descricao1Cat3", "descricao2Cat3"},
-  {"descricao1Cat4", "descricao2Cat4"},
-  {}
+  {"kaminski", "largo"},
+  {"mon", "solar"},
+  {"botanico", "barigui"},
+  {"água verde", "batel"}
 };
 
 // Configuração de layout dos itens de menu

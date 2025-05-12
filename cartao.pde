@@ -12,12 +12,15 @@ class Cartao {
   // Posição vertical do cartão na tela
   public int y;
 
+  public Elemento[] artigo;
+
   // Construtor da classe Cartao
-  Cartao(String URLImagem, String titulo, String descricao, int y) {
+  Cartao(String URLImagem, String titulo, String descricao, int y, Elemento[] artigo) {
     this.titulo = titulo;          // Inicializa o título
     this.descricao = descricao;    // Inicializa a descrição
     this.y = y;                    // Define a posição vertical
     this.URLImagem = "./imagens/" + URLImagem;    // Define o caminho da imagem
+    this.artigo = artigo;
   }
 
   // Método responsável por desenhar o cartão na tela

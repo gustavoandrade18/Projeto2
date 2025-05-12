@@ -3,37 +3,52 @@ import java.util.HashMap;
 
 // Variável que representa o estado ou tela atual
 int telaAtual = 0;
+int offsetArtigo = 20;
+Elemento[] artigoAtivo;
 
 // Lista de categorias disponíveis
 String[] categorias = {
   "Consumo Consciente", 
   "Turismo Cultural", 
   "Parques e Áreas Verdes", 
-  "Alimentação Saudável"
+  "Alimentação Sustentavel",
+  "Transporte Ecológico"
+};
+Elemento[] artigo1 = {
+  new Elemento("TITLE", "Um titulo daora", 50),
+  new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds", 120),
+  new Elemento("IMAGE", "landscape1.jpeg", 200)
 };
 
+Elemento[] artigo2 = {
+  new Elemento("TITLE", "Um titulo daora2", 50),
+  new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds2", 120)
+};
 // Títulos dos cartões para cada categoria
 String[][] titulos = {
-  {"titulo1Cat1", "titulo2Cat1"},
-  {"titulo1Cat2", "titulo2Cat2"},
+  {"titulo1Cat1"},
+  {"titulo1Cat2", "titulo2Cat2", "titulo2Cat1"},
   {"titulo1Cat3", "titulo2Cat3"},
-  {"titulo1Cat4", "titulo2Cat4"}
+  {"titulo1Cat4", "titulo2Cat4"},
+  {}
 };
 
 // URLs ou nomes dos arquivos de imagem para cada cartão
 String[][] URLImagens = {
+  {"landscape1.jpeg"},
+  {"landscape2.jpg", "landscape1.jpeg", "landscape2.jpg"},
   {"landscape1.jpeg", "landscape2.jpg"},
-  {"landscape2.jpg", "landscape1.jpeg"},
   {"landscape1.jpeg", "landscape2.jpg"},
-  {"landscape1.jpeg", "landscape2.jpg"}
+  {}
 };
 
 // Descrições dos cartões para cada categoria
 String[][] descricoes = {
-  {"descricao1Cat1", "descricao2Cat1"},
-  {"descricao1Cat2", "descricao2Cat2"},
+  {"descricao1Cat1"},
+  {"descricao1Cat2", "descricao2Cat2", "descricao2Cat1"},
   {"descricao1Cat3", "descricao2Cat3"},
-  {"descricao1Cat4", "descricao2Cat4"}
+  {"descricao1Cat4", "descricao2Cat4"},
+  {}
 };
 
 // Configuração de layout dos itens de menu
@@ -61,12 +76,12 @@ void setup() {
 
   // Inicializa o mapa de cartões para cada categoria
   for (int i = 0; i < categorias.length; i++) {
-    Cartao[] cartoesArray = new Cartao[titulos[0].length];
+    Cartao[] cartoesArray = new Cartao[titulos[i].length];
     int offset = 70;
 
     // Cria os cartões com título, descrição e imagem
-    for (int j = 0; j < titulos[0].length; j++) {
-      Cartao cartao = new Cartao(URLImagens[i][j], titulos[i][j], descricoes[i][j], offset);
+    for (int j = 0; j < titulos[i].length; j++) {
+      Cartao cartao = new Cartao(URLImagens[i][j], titulos[i][j], descricoes[i][j], offset, artigo1);
       cartoesArray[j] = cartao;
       offset += 240; // Espaçamento vertical entre os cartões
     }
@@ -81,44 +96,59 @@ void setup() {
 
 void draw() {
   background(#EAF6FF); // Fundo branco
-  boolean hovering = false; // Controla se o mouse está sobre alguma categoria
+  if(telaAtual == 0){
+    boolean hovering = false; // Controla se o mouse está sobre alguma categoria
 
-  // Renderiza os botões das categorias
-  for (int i = 0; i < categorias.length; i++) {
-    int y = itemOffsetY + i * (itemAltura + itemEspaco);
-
-    boolean mouseSobre = mouseEstaSobre(0, itemLargura, y, y + itemAltura);
-    hovering = hovering || mouseSobre;
-
-    // Animação de hover (transição de cor)
-    float alvo = mouseSobre ? 1.0 : 0.0;
-    hoverAlphas[i] = lerp(hoverAlphas[i], alvo, easing);
-    color cor = color(lerp(220, 195, hoverAlphas[i]), lerp(255, 220, hoverAlphas[i]), lerp(220, 195, hoverAlphas[i]));
-
-    // Desenha o botão da categoria
-    fill(cor);
-    noStroke();
-    rect(0, y, itemLargura, itemAltura);
-
-    // Troca a categoria ativa se clicado
-    if (flagMousePressed && mouseSobre) categoriaAtiva = categorias[i];
-
-    // Desenha o texto da categoria
-    fill(0);
-    text(categorias[i], 10, y + 25);
+    // Renderiza os botões das categorias
+    for (int i = 0; i < categorias.length; i++) {
+      int y = itemOffsetY + i * (itemAltura + itemEspaco);
+  
+      boolean mouseSobre = mouseEstaSobre(0, itemLargura, y, y + itemAltura);
+      hovering = hovering || mouseSobre;
+  
+      // Animação de hover (transição de cor)
+      float alvo = mouseSobre ? 1.0 : 0.0;
+      hoverAlphas[i] = lerp(hoverAlphas[i], alvo, easing);
+      color cor = color(lerp(220, 195, hoverAlphas[i]), lerp(255, 220, hoverAlphas[i]), lerp(220, 195, hoverAlphas[i]));
+  
+      // Desenha o botão da categoria
+      fill(cor);
+      noStroke();
+      rect(0, y, itemLargura, itemAltura);
+  
+      // Troca a categoria ativa se clicado
+      if (flagMousePressed && mouseSobre) categoriaAtiva = categorias[i];
+  
+      // Desenha o texto da categoria
+      fill(0);
+      text(categorias[i], 10, y + 25);
+    }
+  
+    // Muda o cursor se estiver sobre alguma categoria
+    if (hovering) {
+      cursor(HAND);
+    } else {
+      cursor(ARROW);
+    }
+  
+    // Exibe os cartões da categoria ativa
+    for (Cartao cartaoAtivo : cartoes.get(categoriaAtiva)) {
+      boolean estaSobreCartao = mouseEstaSobre(220, 220 + 800, cartaoAtivo.y, cartaoAtivo.y + 200);
+      print(estaSobreCartao);
+      if(flagMousePressed && estaSobreCartao) telaAtual = 1;
+      artigoAtivo = cartaoAtivo.artigo;
+      cartaoAtivo.display();
+    }
+  }else if(telaAtual == 1){
+     image(loadImage("./imagens/flecha.png"), 20, 20, 20, 20);
+     if(mouseEstaSobre(20, 40, 20, 40) && flagMousePressed) telaAtual = 0;
+     for(Elemento elemento: artigoAtivo){
+       elemento.interpretarElemento();
+     }
+     
+     
   }
-
-  // Muda o cursor se estiver sobre alguma categoria
-  if (hovering) {
-    cursor(HAND);
-  } else {
-    cursor(ARROW);
-  }
-
-  // Exibe os cartões da categoria ativa
-  for (Cartao cartaoAtivo : cartoes.get(categoriaAtiva)) {
-    cartaoAtivo.display();
-  }
+  
 
   // Reset da flag de clique
   flagMousePressed = false;

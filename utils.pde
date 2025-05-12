@@ -8,3 +8,19 @@ void desenharSombraRect(float x, float y, float w, float h, float radius, float 
 boolean mouseEstaSobre(int xInicial, int xFinal, int yInicial, int yFinal) {
   return mouseX > xInicial && mouseX < xFinal && mouseY > yInicial && mouseY < yFinal;
 }
+
+
+int incrementarOffset(Elemento elemento, int offset){
+  switch(elemento.tipo){
+    case "TITLE": 
+      offset += 200;
+      break;
+    case "TEXT": 
+      offset += elemento.conteudo.length();
+      break;
+    case "IMAGE": 
+      offset += 300;
+      break;
+  }
+  return offset;
+}

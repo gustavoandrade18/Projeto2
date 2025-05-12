@@ -17,7 +17,7 @@ class Cartao {
     this.titulo = titulo;          // Inicializa o título
     this.descricao = descricao;    // Inicializa a descrição
     this.y = y;                    // Define a posição vertical
-    this.URLImagem = URLImagem;    // Define o caminho da imagem
+    this.URLImagem = "./imagens/" + URLImagem;    // Define o caminho da imagem
   }
 
   // Método responsável por desenhar o cartão na tela

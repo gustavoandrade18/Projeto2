@@ -1,0 +1,15 @@
+Descrição do aplicativo:
+O aplicativo será basicamente um guia turístico virtual, onde terá um foco no âmbito sustentável e ecológico, visando dar ênfase na natureza, meio ambiente, conscientização e preservação da grande capital Curitiba.
+
+Descrição do tema:
+Esse tema aborda o turismo sustentável de uma forma de encarar e vivenciar e explorar a cidade de Curitiba com uma boa ligação com o meio ambiente, a cultura local e a qualidade de vida que lhe é proporcionado. A principal proposta é que o turista tenha experiências que respeitem e valorizam os abundantes recursos naturais, incentivo em novas práticas ecológicas e promover o consumo de uma forma consciente, alguns elementos como o Transporte verde, parques, praças e áreas de preservação, arte e cultura acessíveis a todos estão presentes e mostram como fazer esse turismo de forma certa. Este guia mostra os belos pontos da capital, além de enfatizar uma cidade exemplo que integra ecologia urbana, educação ambiental e valorização cultural com êxito.
+
+Funcionalidades e Recursos:
+O guia contará com pequenos blocos de categoria que, ao clicar, mostrará 2 ou 3 cards contendo informações (Titulo, pequena descrição técnica, pequena descrição funcional, vídeo/imagem do local) sobre o turismo, essas informações serão devidamente dividas de acordo com os blocos de categoria e terá recursos como Troca rápida de tela, opção de play e pause, opção de ir e voltar de tela
+
+
+Interface:
+A interface inicial é uma explicação inicial do guia turístico, mais como uma mensagem de "boas-vindas", logo após isso você poderá selecionar as categorias que tem duvida e deseja saber mais informações, ao clicar nessas categorias terá uma breve explicação do local, com seu nome e uma imagem, e para se aprofundar no assunto, clique neste card para ver um pequeno vídeo mostrando o local na pratica.
+
+
+Coleção de Midias:

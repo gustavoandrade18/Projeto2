@@ -44,10 +44,10 @@ String[][] URLImagens = {
 
 // Descrições dos cartões para cada categoria
 String[][] descricoes = {
-  {"kaminski", "largo"},
-  {"mon", "solar"},
-  {"botanico", "barigui"},
-  {"água verde", "batel"},
+  {"O Empório Kaminski é um charmoso espaço gastronômico que valoriza os produtos frecos locais. Fica localizado na rua Sete de Setembro no Centro de Curitiba, seus horários são de segunda à sexta das 8h às 20h, e nos sábados as 9h às 18h.", "A Feira do Largo da Ordem é um restaurante histórico que celebra a gastronomia local. Fica localizada no largo da Ordem de Curitiba, seus horários de funcionamento são de Terça à Domingo, das 11h às 22h."},
+  {"O Museu Oscar Niemeyer, conhecido como MON, é um dos principais espaços culturais de Curitiba, famoso por sua arquitetura moderna e suas exposições de arte contemporânea. Sua localização é na Avenida Presidente Getúlio Vargas em Água Verde de Curitiba, e seus horários de funcionamento são de Terça à Domingo das 10h às 18h.", "O Solar do Rosário é um charmoso espaço cultural localizado em Curitiba, conhecido por sua bela arquitetura colonial e um ambiente acolhedor. Fica localizada na Rua do rosário em São Francisco e Curitiba, seus horários de funcionamento são de Terça à Domingo das 10h às 18h."},
+  {"O Jardim Botânico de Curitiba é um dos mais icônicos cartões-postais da cidade. Com sua estufa de vidro em estilo art nouveau e belos jardins, o local é um espaço perfeito para apreciar a natureza, realizar caminhadas e relaxar. Fica localizada na rua Engenho Ostoja Roguski no Jardim Botânico em Curitiba, seus horários de funcionamento são todos os dias da semana das 6h às 20h(com exceção ao estufa, que abre às 9h e fecha as 17h.", "O Parque Barigui é um dos maiores e mais populares parques de Curitiba, oferecendo uma extensa área verde ideal para caminhadas, corridas e atividades ao ar livre. Fica localizada na Avenida Barigui no Bairro Barigui em Curitiba, seus horários de funcionamento são todos os dias das 6h às 20h."},
+  {"A Feira do Água Verde é um dos mercados tradicionais de Curitiba, oferecendo uma variedade de produtos frescos, como frutas, verduras, legumes, queijos e artesanato. Fica localizada na Praça do Japão em Água Verde de Curitiba, seus horários de funcinamento são nos Sábados das 8h às 13h.", "A Feira do Batel é um mercado popular e bem frequentado, conhecido por sua variedade de produtos frescos, incluindo frutas, verduras, legumes, queijos e itens de artesanato. Fica localizada na Praça Nossa Senhora de Salete em Batel de Curitiba, seus horários de funcionamento são nos Sábados das 8h às 13h."},
   {}
 };
 

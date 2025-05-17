@@ -19,7 +19,7 @@ class Elemento{
         break;
       case "TEXT": 
         textSize(17);
-        text(this.conteudo, 200, this.offset); 
+        text(this.conteudo, 200, this.offset, 800,200); 
         break;
       case "IMAGE": 
         image(loadImage("./imagens/" + this.conteudo), 200, this.offset); 

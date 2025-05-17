@@ -14,15 +14,22 @@ String[] categorias = {
   "Alimentação Sustentavel",
   "Transporte Ecológico"
 };
-Elemento[] artigo1 = {
-  new Elemento("TITLE", "Um titulo daora", 50),
-  new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds", 120),
-  new Elemento("IMAGE", "landscape1.jpeg", 200)
+Elemento[][] artigo1 = {{
+  new Elemento("TITLE", "Empório Kaminski", 50),
+  new Elemento("TEXT", "Um dos estabelecimentos mais icônicos de Curitiba, o Empório Kaminski une quase um século de história familiar com uma experiência gastronômica diversificada. Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família"+
+  " Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família", 120),
+  new Elemento("IMAGE", "landscape1.jpeg", 200)},
+  {new Elemento("TITLE", "Museu Oscar Niemeyer", 50),
+   new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds", 120),
+   new Elemento("IMAGE", "landscape1.jpeg", 200)}, 
+  {new Elemento("TITLE", "Jardim Botânico", 50),
+   new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds", 120),
+   new Elemento("IMAGE", "landscape1.jpeg", 200)}, {}, {}
 };
 
-Elemento[] artigo2 = {
+Elemento[][] artigo2 = {{
   new Elemento("TITLE", "Um titulo daora2", 50),
-  new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds2", 120)
+  new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds2", 120)}, {}, {}, {}, {}
 };
 // Títulos dos cartões para cada categoria
 String[][] titulos = {
@@ -81,7 +88,7 @@ void setup() {
 
     // Cria os cartões com título, descrição e imagem
     for (int j = 0; j < titulos[i].length; j++) {
-      Cartao cartao = new Cartao(URLImagens[i][j], titulos[i][j], descricoes[i][j], offset, artigo1);
+      Cartao cartao = new Cartao(URLImagens[i][j], titulos[i][j], descricoes[i][j], offset, artigo1[i]);
       cartoesArray[j] = cartao;
       offset += 240; // Espaçamento vertical entre os cartões
     }

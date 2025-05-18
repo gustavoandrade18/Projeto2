@@ -19,51 +19,51 @@ Map<String, Elemento[]> artigos = new HashMap<>() {{
             put(
                 "Empório Kaminski",
                 new Elemento[] {
-                    new Elemento("TITLE", "Empório Kaminski"),
+                    new Elemento("TITLE", "Empório Kaminski", 100),
                     new Elemento("TEXT", "Um dos estabelecimentos mais icônicos de Curitiba, o Empório Kaminski une quase um século de história familiar com uma experiência gastronômica diversificada. Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família"+
-                    " Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família")
+                    " Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família", 110)
                 }
             );
             put(
                 "Feira do Largo da Ordem",
                 new Elemento[] {
-                    new Elemento("TITLE", "Feira do Largo da Ordem"),
+                    new Elemento("TITLE", "Feira do Largo da Ordem", 100),
                 }
             );
             put(
                 "Museu Oscar Niemeyer",
                 new Elemento[] {
-                    new Elemento("TITLE", "Museu Oscar Niemeyer"),
+                    new Elemento("TITLE", "Museu Oscar Niemeyer", 100),
                 }
             );
             put(
                 "Solar do Rosário",
                 new Elemento[] {
-                    new Elemento("TITLE", "Solar do Rosário"),
+                    new Elemento("TITLE", "Solar do Rosário", 100),
                 }
             );
             put(
                 "Jardim Botânico",
                 new Elemento[] {
-                    new Elemento("TITLE", "Jardim Botânico"),
+                    new Elemento("TITLE", "Jardim Botânico", 100),
                 }
             );
             put(
                 "Parque Barigui",
                 new Elemento[] {
-                    new Elemento("TITLE", "Parque Barigui"),
+                    new Elemento("TITLE", "Parque Barigui", 100),
                 }
             );
             put(
                 "Feira do Água Verde",
                 new Elemento[] {
-                    new Elemento("TITLE", "Feira do Água Verde"),     
+                    new Elemento("TITLE", "Feira do Água Verde", 100),     
                 }
             );
             put(
                 "Feira do Batel",
                 new Elemento[] {
-                    new Elemento("TITLE", "Feira do Batel"),
+                    new Elemento("TITLE", "Feira do Batel", 100),
                 }
             );
         }};
@@ -180,8 +180,12 @@ void draw() {
     // Exibe os cartões da categoria ativa
     for (Cartao cartaoAtivo : cartoes.get(categoriaAtiva)) {
       boolean estaSobreCartao = mouseEstaSobre(220, 220 + 800, cartaoAtivo.y, cartaoAtivo.y + 200);
-      if(flagMousePressed && estaSobreCartao) telaAtual = 1;
-      artigoAtivo = cartaoAtivo.artigo;
+      if(flagMousePressed && estaSobreCartao){
+        telaAtual = 1;
+        artigoAtivo = cartaoAtivo.artigo;
+        return;
+      }
+      
       cartaoAtivo.display();
     }
   }else if(telaAtual == 1){

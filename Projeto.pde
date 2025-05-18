@@ -140,9 +140,45 @@ void setup() {
   }
 }
 
+Botao[] botoes = {new Botao("Instruçoes", 450, 500, 1), new Botao("Opçoes", 450, 550, 2)};
+
 void draw() {
   background(#EAF6FF); // Fundo branco
   if(telaAtual == 0){
+    textSize(55);
+    fill(0);
+    text("EcoTrip Curitiba", 350, 200);
+    for(Botao botao:botoes){
+      botao.display(flagMousePressed);
+    }
+  }else if(telaAtual == 1){
+    image(loadImage("./imagens/flecha.png"), 20, 20, 20, 20);
+    if(mouseEstaSobre(20, 40, 20, 40) && flagMousePressed) telaAtual = 0;
+    
+    fill(34, 139, 34); // verde escuro
+    textSize(40);
+    text("Bem-vindo ao EcoTrip Curitiba", 270, 100);
+    
+    // Subtítulo
+    textSize(24);
+    fill(60);
+    text("Instruções de uso do aplicativo", 270, 160);
+    
+    // Caixa de instruções
+    fill(255);
+    stroke(200);
+    strokeWeight(2);
+    rectMode(CENTER);
+    rect(width/2, height/2 + 30, 800, 400, 20);
+    
+    // Texto das instruções
+    fill(50);
+    textSize(18);
+    text("- Escolha a categoria de turismo desejada;",550, 500, 760, 400);
+    text("- Clique no local para ter mais informaçoes sobre ele;",550, 520, 760, 400);
+    text("- Volte para a tela principal para ver informaçoes de mais locais.",550, 540, 760, 400);
+    rectMode(CORNER);
+  }else if(telaAtual == 2){
     boolean hovering = false; // Controla se o mouse está sobre alguma categoria
 
     // Renderiza os botões das categorias
@@ -181,16 +217,16 @@ void draw() {
     for (Cartao cartaoAtivo : cartoes.get(categoriaAtiva)) {
       boolean estaSobreCartao = mouseEstaSobre(220, 220 + 800, cartaoAtivo.y, cartaoAtivo.y + 200);
       if(flagMousePressed && estaSobreCartao){
-        telaAtual = 1;
+        telaAtual = 3;
         artigoAtivo = cartaoAtivo.artigo;
         return;
       }
       
       cartaoAtivo.display();
     }
-  }else if(telaAtual == 1){
+  }else if(telaAtual == 3){
      image(loadImage("./imagens/flecha.png"), 20, 20, 20, 20);
-     if(mouseEstaSobre(20, 40, 20, 40) && flagMousePressed) telaAtual = 0;
+     if(mouseEstaSobre(20, 40, 20, 40) && flagMousePressed) telaAtual = 2;
      for(Elemento elemento: artigoAtivo){
        elemento.interpretarElemento();
      }

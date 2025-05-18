@@ -59,7 +59,7 @@ boolean flagMousePressed = false;
 
 // Array para controlar opacidade do hover em cada item de categoria
 float[] hoverAlphas = new float[categorias.length];
-float easing = 0.2; // Suavidade da transição de hover
+float easing = 0.4; // Suavidade da transição de hover
 
 // Mapa que associa cada categoria a um array de cartões
 Map<String, Cartao[]> cartoes = new HashMap<String, Cartao[]>(); 
@@ -76,7 +76,6 @@ void setup() {
                     new Elemento("TITLE", "Empório Kaminski", 100),
                     new Elemento("TEXT", "Um dos estabelecimentos mais icônicos de Curitiba, o Empório Kaminski une quase um século de história familiar com uma experiência gastronômica diversificada. Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família"+
                     " Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família", 110),
-                    new Elemento("VIDEO", "file_example_MP4_480_1_5MG.mp4", 130)
                 }
             );
             put(

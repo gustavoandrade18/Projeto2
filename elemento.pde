@@ -23,11 +23,15 @@ class Elemento{
     switch(this.tipo){
       case "TITLE": 
         textSize(27);
-        text(this.conteudo, 200, this.offset); 
+        text(this.conteudo, 150, this.offset); 
+        break;
+      case "SUBTITLE":
+        textSize(22);
+        text(this.conteudo, 150, this.offset); 
         break;
       case "TEXT": 
         textSize(17);
-        text(this.conteudo, 200, this.offset, 800,200); 
+        text(this.conteudo, 150, this.offset, 800,200); 
         break;
       case "IMAGE": 
         image(loadImage("./imagens/" + this.conteudo), 200, this.offset); 

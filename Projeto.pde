@@ -146,7 +146,7 @@ void draw() {
   background(#EAF6FF); // Fundo branco
   if(telaAtual == 0){
     textSize(55);
-    fill(0);
+    fill(#69EA36);
     text("EcoTrip Curitiba", 350, 200);
     for(Botao botao:botoes){
       botao.display(flagMousePressed);

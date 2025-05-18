@@ -3,12 +3,9 @@ class Elemento{
   
   public String conteudo;
   
-  public int offset;
-  
-  Elemento(String tipo, String conteudo, int offset){
+  Elemento(String tipo, String conteudo){
     this.tipo = tipo;
     this.conteudo = conteudo;
-    this.offset = offset;
   }
   
   void interpretarElemento(){

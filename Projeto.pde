@@ -1,5 +1,6 @@
 import java.util.Map;
 import java.util.HashMap;
+import processing.video.*;
 
 // Variável que representa o estado ou tela atual
 int telaAtual = 0;
@@ -15,60 +16,7 @@ String[] categorias = {
   "Transporte Ecológico"
 };
 
-Map<String, Elemento[]> artigos = new HashMap<>() {{
-            put(
-                "Empório Kaminski",
-                new Elemento[] {
-                    new Elemento("TITLE", "Empório Kaminski", 100),
-                    new Elemento("TEXT", "Um dos estabelecimentos mais icônicos de Curitiba, o Empório Kaminski une quase um século de história familiar com uma experiência gastronômica diversificada. Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família"+
-                    " Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família", 110)
-                }
-            );
-            put(
-                "Feira do Largo da Ordem",
-                new Elemento[] {
-                    new Elemento("TITLE", "Feira do Largo da Ordem", 100),
-                }
-            );
-            put(
-                "Museu Oscar Niemeyer",
-                new Elemento[] {
-                    new Elemento("TITLE", "Museu Oscar Niemeyer", 100),
-                }
-            );
-            put(
-                "Solar do Rosário",
-                new Elemento[] {
-                    new Elemento("TITLE", "Solar do Rosário", 100),
-                }
-            );
-            put(
-                "Jardim Botânico",
-                new Elemento[] {
-                    new Elemento("TITLE", "Jardim Botânico", 100),
-                }
-            );
-            put(
-                "Parque Barigui",
-                new Elemento[] {
-                    new Elemento("TITLE", "Parque Barigui", 100),
-                }
-            );
-            put(
-                "Feira do Água Verde",
-                new Elemento[] {
-                    new Elemento("TITLE", "Feira do Água Verde", 100),     
-                }
-            );
-            put(
-                "Feira do Batel",
-                new Elemento[] {
-                    new Elemento("TITLE", "Feira do Batel", 100),
-                }
-            );
-        }};
-
-
+Map<String, Elemento[]> artigos;
 
 // Títulos dos cartões para cada categoria
 String[][] titulos = {
@@ -120,6 +68,62 @@ void setup() {
   size(1070, 720); // Tamanho da janela
   textSize(15); // Tamanho do texto
 
+
+  artigos = new HashMap<>() {{
+            put(
+                "Empório Kaminski",
+                new Elemento[] {
+                    new Elemento("TITLE", "Empório Kaminski", 100),
+                    new Elemento("TEXT", "Um dos estabelecimentos mais icônicos de Curitiba, o Empório Kaminski une quase um século de história familiar com uma experiência gastronômica diversificada. Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família"+
+                    " Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família", 110),
+                    new Elemento("VIDEO", "file_example_MP4_480_1_5MG.mp4", 130)
+                }
+            );
+            put(
+                "Feira do Largo da Ordem",
+                new Elemento[] {
+                    new Elemento("TITLE", "Feira do Largo da Ordem", 100),
+                }
+            );
+            put(
+                "Museu Oscar Niemeyer",
+                new Elemento[] {
+                    new Elemento("TITLE", "Museu Oscar Niemeyer", 100),
+                }
+            );
+            put(
+                "Solar do Rosário",
+                new Elemento[] {
+                    new Elemento("TITLE", "Solar do Rosário", 100),
+                }
+            );
+            put(
+                "Jardim Botânico",
+                new Elemento[] {
+                    new Elemento("TITLE", "Jardim Botânico", 100),
+                }
+            );
+            put(
+                "Parque Barigui",
+                new Elemento[] {
+                    new Elemento("TITLE", "Parque Barigui", 100),
+                }
+            );
+            put(
+                "Feira do Água Verde",
+                new Elemento[] {
+                    new Elemento("TITLE", "Feira do Água Verde", 100),     
+                }
+            );
+            put(
+                "Feira do Batel",
+                new Elemento[] {
+                    new Elemento("TITLE", "Feira do Batel", 100),
+                }
+            );
+        }};
+
+
   // Inicializa o mapa de cartões para cada categoria
   for (int i = 0; i < categorias.length; i++) {
     Cartao[] cartoesArray = new Cartao[titulos[i].length];
@@ -135,9 +139,6 @@ void setup() {
     // Associa a categoria com seu array de cartões
     cartoes.put(categorias[i], cartoesArray);
   }
-
-  // Apenas imprime o mapa no console
-  print(cartoes);
 }
 
 void draw() {
@@ -201,6 +202,10 @@ void draw() {
 
   // Reset da flag de clique
   flagMousePressed = false;
+}
+
+void movieEvent(Movie m) {
+  m.read();
 }
 
 // Detecta clique do mouse

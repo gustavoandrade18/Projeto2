@@ -14,23 +14,62 @@ String[] categorias = {
   "Alimentação Sustentavel",
   "Transporte Ecológico"
 };
-Elemento[][] artigo1 = {{
-  new Elemento("TITLE", "Empório Kaminski", 50),
-  new Elemento("TEXT", "Um dos estabelecimentos mais icônicos de Curitiba, o Empório Kaminski une quase um século de história familiar com uma experiência gastronômica diversificada. Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família"+
-  " Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família", 120),
-  new Elemento("IMAGE", "landscape1.jpeg", 200)},
-  {new Elemento("TITLE", "Museu Oscar Niemeyer", 50),
-   new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds", 120),
-   new Elemento("IMAGE", "landscape1.jpeg", 200)}, 
-  {new Elemento("TITLE", "Jardim Botânico", 50),
-   new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds", 120),
-   new Elemento("IMAGE", "landscape1.jpeg", 200)}, {}, {}
-};
 
-Elemento[][] artigo2 = {{
-  new Elemento("TITLE", "Um titulo daora2", 50),
-  new Elemento("TEXT", "bastante textoasdasdadadadadadasdasdadsasdadsasdasdasds2", 120)}, {}, {}, {}, {}
-};
+Map<String, Elemento[]> artigos = new HashMap<>() {{
+            put(
+                "Empório Kaminski",
+                new Elemento[] {
+                    new Elemento("TITLE", "Empório Kaminski"),
+                    new Elemento("TEXT", "Um dos estabelecimentos mais icônicos de Curitiba, o Empório Kaminski une quase um século de história familiar com uma experiência gastronômica diversificada. Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família"+
+                    " Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família")
+                }
+            );
+            put(
+                "Feira do Largo da Ordem",
+                new Elemento[] {
+                    new Elemento("TITLE", "Feira do Largo da Ordem"),
+                }
+            );
+            put(
+                "Museu Oscar Niemeyer",
+                new Elemento[] {
+                    new Elemento("TITLE", "Museu Oscar Niemeyer"),
+                }
+            );
+            put(
+                "Solar do Rosário",
+                new Elemento[] {
+                    new Elemento("TITLE", "Solar do Rosário"),
+                }
+            );
+            put(
+                "Jardim Botânico",
+                new Elemento[] {
+                    new Elemento("TITLE", "Jardim Botânico"),
+                }
+            );
+            put(
+                "Parque Barigui",
+                new Elemento[] {
+                    new Elemento("TITLE", "Parque Barigui"),
+                }
+            );
+            put(
+                "Feira do Água Verde",
+                new Elemento[] {
+                    new Elemento("TITLE", "Feira do Água Verde"),     
+                }
+            );
+            put(
+                "Feira do Batel",
+                new Elemento[] {
+                    new Elemento("TITLE", "Feira do Batel"),
+                }
+            );
+        }};
+
+
+
 // Títulos dos cartões para cada categoria
 String[][] titulos = {
   {"Empório Kaminski", "Feira do Largo da Ordem"},
@@ -88,7 +127,7 @@ void setup() {
 
     // Cria os cartões com título, descrição e imagem
     for (int j = 0; j < titulos[i].length; j++) {
-      Cartao cartao = new Cartao(URLImagens[i][j], titulos[i][j], descricoes[i][j], offset, artigo1[i]);
+      Cartao cartao = new Cartao(URLImagens[i][j], titulos[i][j], descricoes[i][j], offset, artigos.get(titulos[i][j]));
       cartoesArray[j] = cartao;
       offset += 240; // Espaçamento vertical entre os cartões
     }

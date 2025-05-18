@@ -20,19 +20,3 @@ PVector calcularTextoCentralizado(float btnX, float btnY, float btnLargura, floa
 
   return new PVector(textoX, textoY);
 }
-
-
-int incrementarOffset(Elemento elemento, int offset){
-  switch(elemento.tipo){
-    case "TITLE": 
-      offset += 200;
-      break;
-    case "TEXT": 
-      offset += elemento.conteudo.length();
-      break;
-    case "IMAGE": 
-      offset += 300;
-      break;
-  }
-  return offset;
-}

@@ -27,6 +27,7 @@ class Botao {
     
     if(flagMousePressed && mouseEstaSobre(this.x, this.x + 150, this.y, this.y + 30)){
       telaAtual = tela;
+      imagemCarregada = false;
     }
   }
 }

@@ -35,15 +35,21 @@ class Elemento{
         break;
       case "IMAGE": 
         tint(255, 100);
+        
+
         background(#F5FFF6);
         image(loadImage("./imagens/"+ this.conteudo), 0, 0, width*1.1, height*1.1);
+        
+        
         tint(255, 255);
         break;
       case "VIDEO":
         if (video.available()) {
           video.read();
         }
-        image(video, 200, this.offset);
+        if( e == 0)image(video, 0, this.offset, 1070, 600);
+        
+        
         break;
     }
   

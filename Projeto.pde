@@ -14,8 +14,7 @@ String[] categorias = {
   "Consumo Consciente", 
   "Turismo Cultural", 
   "Parques e Áreas Verdes", 
-  "Alimentação Sustentavel",
-  "Transporte Ecológico"
+  "Alimentação Sustentavel"
 };
 
 Map<String, Elemento[]> artigos;
@@ -26,7 +25,7 @@ String[][] titulos = {
   {"Museu Oscar Niemeyer", "Solar do Rosário"},
   {"Jardim Botânico", "Parque Barigui"},
   {"Feira do Água Verde", "Feira do Batel"},
-  {}
+  
 };
 
 // URLs ou nomes dos arquivos de imagem para cada cartão
@@ -35,7 +34,7 @@ String[][] URLImagens = {
   {"mon.jpg", "solar.jpg"},
   {"botanico.jpg", "barigui.jpg"},
   {"aguaverde.jpg", "batel.jpg"},
-  {"CuritibaTelaInicial", ""}
+  
 };
 
 // Descrições dos cartões para cada categoria
@@ -44,7 +43,7 @@ String[][] descricoes = {
   {"O Museu Oscar Niemeyer, conhecido como MON, é um dos principais espaços culturais de Curitiba, famoso por sua arquitetura moderna e suas exposições de arte contemporânea. Sua localização é na Avenida Presidente Getúlio Vargas em Água Verde de Curitiba, e seus horários de funcionamento são de Terça à Domingo das 10h às 18h.", "O Solar do Rosário é um charmoso espaço cultural localizado em Curitiba, conhecido por sua bela arquitetura colonial e um ambiente acolhedor. Fica localizada na Rua do rosário em São Francisco e Curitiba, seus horários de funcionamento são de Terça à Domingo das 10h às 18h."},
   {"O Jardim Botânico de Curitiba é um dos mais icônicos cartões-postais da cidade. Com sua estufa de vidro em estilo art nouveau e belos jardins, o local é um espaço perfeito para apreciar a natureza, realizar caminhadas e relaxar. Fica localizada na rua Engenho Ostoja Roguski no Jardim Botânico em Curitiba, seus horários de funcionamento são todos os dias da semana das 6h às 20h(com exceção ao estufa, que abre às 9h e fecha as 17h.", "O Parque Barigui é um dos maiores e mais populares parques de Curitiba, oferecendo uma extensa área verde ideal para caminhadas, corridas e atividades ao ar livre. Fica localizada na Avenida Barigui no Bairro Barigui em Curitiba, seus horários de funcionamento são todos os dias das 6h às 20h."},
   {"A Feira do Água Verde é um dos mercados tradicionais de Curitiba, oferecendo uma variedade de produtos frescos, como frutas, verduras, legumes, queijos e artesanato. Fica localizada na Praça do Japão em Água Verde de Curitiba, seus horários de funcinamento são nos Sábados das 8h às 13h.", "A Feira do Batel é um mercado popular e bem frequentado, conhecido por sua variedade de produtos frescos, incluindo frutas, verduras, legumes, queijos e itens de artesanato. Fica localizada na Praça Nossa Senhora de Salete em Batel de Curitiba, seus horários de funcionamento são nos Sábados das 8h às 13h."},
-  {}
+  
 };
 
 // Configuração de layout dos itens de menu
@@ -108,7 +107,8 @@ void setup() {
                 new Elemento("SUBTITLE", "Informações Práticas", 600),
                 new Elemento("TEXT", "Horário: Domingos das 9h às 14h\n" +
                 "Local: Largo Coronel Enéas / Rua Kellers, Setor Histórico\n" +
-                "Dica: Chegue cedo para aproveitar melhor e evitar aglomerações", 620)
+                "Dica: Chegue cedo para aproveitar melhor e evitar aglomerações", 620),
+                new Elemento("VIDEO", "largo2.mov", 700)
                 }
             );
             put(
@@ -127,7 +127,8 @@ void setup() {
               new Elemento("SUBTITLE", "Informações Úteis", 600),
               new Elemento("TEXT", "Horário: Terça a domingo, 10h às 18h\n" +
               "Ingressos: R$30 (inteira) / R$15 (meia) - Grátis às quartas\n" +
-              "Localização: Rua Marechal Hermes, 999 - Centro Cívico", 620)
+              "Localização: Rua Marechal Hermes, 999 - Centro Cívico", 620),
+                new Elemento("VIDEO", "Museu do olho.mp4", 700)
                 }
             );
             put(
@@ -168,7 +169,8 @@ void setup() {
               new Elemento("TEXT", "Horário: Diariamente das 6h às 19h30 (inverno) e 20h (verão)\n" +
               "Melhor período: Manhãs de terça a sexta para evitar multidões\n" +
               "Acessibilidade: Rota especial para cadeirantes e carrinhos\n" +
-              "Estacionamento: R$ 5,00 por 3 horas (vagas limitadas)", 620)
+              "Estacionamento: R$ 5,00 por 3 horas (vagas limitadas)", 620),
+              new Elemento("VIDEO", "Jardim Botanico.mp4", 700)
           }
             );
             put(
@@ -189,7 +191,8 @@ void setup() {
                 new Elemento("TEXT", "Horário: Aberto 24h com segurança monitorada\n" +
                 "Melhor Acesso: Entrada principal pela Av. Cândido Hartmann\n" +
                 "Estacionamento: 500 vagas (R$ 6 por 4 horas)\n" +
-                "Aluguel de bikes: R$ 15/hora nos finais de semana", 620)
+                "Aluguel de bikes: R$ 15/hora nos finais de semana", 620),
+                new Elemento("VIDEO", "Barigui.mp4", 700)
             }
             );
             put(
@@ -209,7 +212,8 @@ void setup() {
                 new Elemento("SUBTITLE", "Planejando Sua Visita", 600),
                 new Elemento("TEXT", "Horário: Domingos das 7h às 15h (pico às 11h)\n" +
                 "Local: Praça João Paulo II (estacionamento no Shopping Água Verde)\n" +
-                "Dicas: Leve moeda trocada e sua caneca reutilizável para drinks", 620)
+                "Dicas: Leve moeda trocada e sua caneca reutilizável para drinks", 620),
+                new Elemento("VIDEO", "Feira Agua verde.mp4", 700)
     }
             );
             put(
@@ -228,7 +232,8 @@ void setup() {
                 new Elemento("SUBTITLE", "Informações Úteis", 600),
                 new Elemento("TEXT", "Horário: Sábados das 8h30 às 14h (melhor horário: 10h-12h)\n" +
                 "Local: Praça da Ucrânia - Batel (estacionamento no Shopping Batel)\n" +
-                "Dica: Leve sua ecobag e caneca reutilizável", 620)
+                "Dica: Leve sua ecobag e caneca reutilizável", 620),
+                new Elemento("VIDEO", "Feira Batel.mp4", 700)
     }
             );
         }};
@@ -253,10 +258,14 @@ void setup() {
 
 Botao[] botoes = {new Botao("Instruçoes", 450, 500, 1), new Botao("Opçoes", 450, 550, 2)};
 
+boolean imagemCarregada = false;
 void draw() {
-  background(#EAF6FF); // Fundo branco
   if(telaAtual == 0){
-    image(loadImage("./imagens/CuritibaTelaInicial.png"), 0, 0, width, height);
+    if(!imagemCarregada){
+       image(loadImage("./imagens/CuritibaTelaInicial.png"), 0, 0, width, height);
+       imagemCarregada = true;
+    }
+    
     textSize(55);
     fill(#131C15);
     text("EcoTrip Curitiba", 350, 200);
@@ -264,6 +273,8 @@ void draw() {
       botao.display(flagMousePressed);
     }
   }else if(telaAtual == 1){
+    background(255);
+    imagemCarregada = false;
     image(loadImage("./imagens/flecha.png"), 20, 20, 20, 20);
     if(mouseEstaSobre(20, 40, 20, 40) && flagMousePressed) telaAtual = 0;
     
@@ -292,7 +303,8 @@ void draw() {
     rectMode(CORNER);
   }else if(telaAtual == 2){
     boolean hovering = false; // Controla se o mouse está sobre alguma categoria
-    if (categoriaAtiva == "Consumo Consciente")
+    if(!imagemCarregada){
+      if (categoriaAtiva == "Consumo Consciente")
       {
         image(loadImage("./imagens/MercadoMunicipal.jpg"), 0, 0, width, height);
       }
@@ -312,6 +324,9 @@ void draw() {
      {
        image(loadImage("./imagens/Transporte.jpg"), 0, 0, width, height);
      }
+     imagemCarregada = true;
+    }
+    
     // Renderiza os botões das categorias
     for (int i = 0; i < categorias.length; i++) {
       int y = itemOffsetY + i * (itemAltura + itemEspaco);
@@ -349,6 +364,7 @@ void draw() {
       boolean estaSobreCartao = mouseEstaSobre(220, 220 + 800, cartaoAtivo.y, cartaoAtivo.y + 200);
       if(flagMousePressed && estaSobreCartao){
         telaAtual = 3;
+        imagemCarregada = false;
         artigoAtivo = cartaoAtivo.artigo;
         return;
       }
@@ -356,7 +372,7 @@ void draw() {
       cartaoAtivo.display();
     }
   }else if(telaAtual == 3){
-     if(mouseEstaSobre(20, 40, 20, 40) && flagMousePressed) telaAtual = 2;
+     if(mouseEstaSobre(20, 40, 20, 40) && flagMousePressed) {telaAtual = 2;imagemCarregada = false;};
       // Aplica a translação de rolagem
       pushMatrix();
       translate(0, scrollY);
@@ -371,8 +387,11 @@ void draw() {
   // Reset da flag de clique
   flagMousePressed = false;
 }
+
+float e;
 void mouseWheel(MouseEvent event) {
-  float e = event.getCount();
+  e = event.getCount();
+  print(e);
   scrollY += -e * scrollSpeed;
   
   // Limites opcionais

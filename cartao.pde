@@ -46,4 +46,9 @@ class Cartao {
     textSize(15);
     text(this.descricao, 440, this.y + 65, 800 - 35 - 200, 200); // Texto com quebra automática
   }
+  void carregaImagem(String nomeImagem)
+  {
+    nomeImagem = "./imagens/" + nomeImagem;
+    image(loadImage(nomeImagem), 240, this.y + 15, 150, 150);
+  }
 }

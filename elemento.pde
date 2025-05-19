@@ -34,7 +34,10 @@ class Elemento{
         text(this.conteudo, 150, this.offset, 800,200); 
         break;
       case "IMAGE": 
-        image(loadImage("./imagens/" + this.conteudo), 200, this.offset); 
+        tint(255, 100);
+        background(#F5FFF6);
+        image(loadImage("./imagens/"+ this.conteudo), 0, 0, width*1.1, height*1.1);
+        tint(255, 255);
         break;
       case "VIDEO":
         if (video.available()) {

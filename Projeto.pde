@@ -6,6 +6,8 @@ import processing.video.*;
 int telaAtual = 0;
 int offsetArtigo = 20;
 Elemento[] artigoAtivo;
+float scrollY = 0;  // deslocamento vertical
+float scrollSpeed = 20;
 
 // Lista de categorias disponíveis
 String[] categorias = {
@@ -33,7 +35,7 @@ String[][] URLImagens = {
   {"mon.jpg", "solar.jpg"},
   {"botanico.jpg", "barigui.jpg"},
   {"aguaverde.jpg", "batel.jpg"},
-  {}
+  {"CuritibaTelaInicial", ""}
 };
 
 // Descrições dos cartões para cada categoria
@@ -73,6 +75,7 @@ void setup() {
             put(
                 "Empório Kaminski",
                 new Elemento[] {
+                    new Elemento("IMAGE","Emporio.jpg",0),
                     new Elemento("TITLE", "Empório Kaminski", 100),
                     new Elemento("TEXT", "Um dos estabelecimentos mais icônicos de Curitiba, o Empório Kaminski une quase um século de história familiar com uma experiência gastronômica diversificada. Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família"+
                     " Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família", 115),
@@ -85,13 +88,14 @@ void setup() {
                     "Cestas Especiais: Opções para presentear, como a \"Cesta Kaminski\" (R$ 129,80), com pães, frios e geleias",460),
                     new Elemento("SUBTITLE", "Unidades", 600),
                     new Elemento ("TEXT", "Empório Kaminski (Av. Sete de Setembro, 6355): Funciona como mercearia, restaurante e espaço para eventos. Abre diariamente das 6h30 às 22h\n"+
-                    "Kaminski Padaria (Av. Iguaçu, 2735): Focada em produção de pães. Horário: 6h30 às 20h (segunda a sábado)",620)
+                    "Kaminski Padaria (Av. Iguaçu, 2735): Focada em produção de pães. Horário: 6h30 às 20h (segunda a sábado)",620),
  
               }
             );
             put(
                 "Feira do Largo da Ordem",
                 new Elemento[] {
+                new Elemento("IMAGE","FeiraOrdem.jpg",0),
                 new Elemento("TITLE", "Feira do Largo da Ordem", 100),
                 new Elemento("TEXT", "A Feira do Largo da Ordem é a feira de artesanato mais tradicional de Curitiba, realizada todo domingo no histórico Largo da Ordem. Com mais de 40 anos de existência, reúne artesãos, músicos e comerciantes em um ambiente cultural vibrante.", 115),
                 new Elemento("SUBTITLE", "O Que Você Precisa Saber:", 250),
@@ -110,6 +114,7 @@ void setup() {
             put(
               "Museu Oscar Niemeyer",
               new Elemento[] {
+              new Elemento("IMAGE","MuseuOlho.jpg",0),
               new Elemento("TITLE", "Museu Oscar Niemeyer", 100),
               new Elemento("TEXT", "Conhecido como 'Museu do Olho' por sua arquitetura icônica, o MON é o maior museu de arte da América Latina. Projetado por Oscar Niemeyer, reúne exposições nacionais e internacionais em um espaço de 35 mil m².", 115),
               new Elemento("SUBTITLE", "Destaques do Museu", 250),
@@ -128,6 +133,7 @@ void setup() {
             put(
               "Solar do Rosário", 
               new Elemento[] {
+              new Elemento("IMAGE","SolarRosario.jpg",0),
               new Elemento("TITLE", "Solar do Rosário", 100),
               new Elemento("TEXT", "O Solar do Rosário é um dos espaços culturais mais charmosos de Curitiba, instalado em um casarão histórico do século XIX. Combinando arquitetura colonial, jardins encantadores e programação cultural diversificada, é um refúgio de arte e história no coração da cidade.", 115),
               new Elemento("SUBTITLE", "História e Arquitetura", 250),
@@ -145,28 +151,85 @@ void setup() {
     }
 );
             put(
-                "Jardim Botânico",
-                new Elemento[] {
-                    new Elemento("TITLE", "Jardim Botânico", 100),
-                }
+              "Jardim Botânico",
+              new Elemento[] {
+              new Elemento("IMAGE","JardimBotanico.jpg",0),
+              new Elemento("TITLE", "Jardim Botânico de Curitiba", 100),
+              new Elemento("TEXT", "Principal cartão-postal da cidade, o Jardim Botânico Francisca Maria Garfunkel Richbieter foi inaugurado em 1991 e se destaca pela estufa de vidro em estilo art nouveau. Com 278 mil m², é um santuário de biodiversidade que recebe 1,8 milhão de visitantes anualmente.", 115),
+              new Elemento("SUBTITLE", "Atrativos Imperdíveis", 250),
+              new Elemento("TEXT", "Estufa de 458m²: Abriga espécies da Mata Atlântica em 3 cúpulas com temperatura controlada (18°C)", 270),
+              new Elemento("TEXT", "Jardim Sensorial: Percurso com 200 plantas aromáticas e táteis para experiência inclusiva", 350),
+              new Elemento("SUBTITLE", "Estrutura Completa", 440),
+              new Elemento("TEXT", "Museu Botânico: Herbário com 400 mil amostras e biblioteca especializada\n" +
+              "Trilhas Ecológicas: 1,5km de caminhos pela mata nativa com placas educativas\n" +
+              "Jardim das Esculturas: 28 obras de arte ao ar livre\n" +
+              "Espaço Cultural: Exposições temporárias no antigo portal da estrada de ferro", 460),
+              new Elemento("SUBTITLE", "Dicas de Visita", 600),
+              new Elemento("TEXT", "Horário: Diariamente das 6h às 19h30 (inverno) e 20h (verão)\n" +
+              "Melhor período: Manhãs de terça a sexta para evitar multidões\n" +
+              "Acessibilidade: Rota especial para cadeirantes e carrinhos\n" +
+              "Estacionamento: R$ 5,00 por 3 horas (vagas limitadas)", 620)
+          }
             );
             put(
                 "Parque Barigui",
                 new Elemento[] {
-                    new Elemento("TITLE", "Parque Barigui", 100),
-                }
+                new Elemento("IMAGE","ParqueBarigui.jpg",0),
+                new Elemento("TITLE", "Parque Barigui", 100),
+                new Elemento("TEXT", "Com 1.4 milhão de m², o Parque Barigui é o maior e mais frequentado parque urbano de Curitiba. Inaugurado em 1972 pelo prefeito Jaime Lerner, destaca-se pela represa de 140.000m² e pela população fixa de capivaras que se tornaram símbolo do local.", 115),
+                new Elemento("SUBTITLE", "Ecossistema e Preservação", 250),
+                new Elemento("TEXT", "Reserva Ambiental: 400 espécies de fauna, incluindo 30 capivaras residentes e aves migratórias", 270),
+                new Elemento("TEXT", "Projeto Águas: Sistema de filtragem natural que mantém a qualidade da represa desde 2015", 350),
+                new Elemento("SUBTITLE", "Estrutura Completa", 440),
+                new Elemento("TEXT", "17km de ciclovias: Circuito completo ao redor do parque com bicicletários\n" +
+                "Centro de Exposições: 5.000m² para eventos, com arquitetura de Abrão Assad\n" +
+                "Museu do Automóvel: 70 veículos antigos em exposição permanente\n" +
+                "Quiosques Sustentáveis: Alimentação com reciclagem obrigatória de resíduos", 460),
+                new Elemento("SUBTITLE", "Dicas de Visita", 600),
+                new Elemento("TEXT", "Horário: Aberto 24h com segurança monitorada\n" +
+                "Melhor Acesso: Entrada principal pela Av. Cândido Hartmann\n" +
+                "Estacionamento: 500 vagas (R$ 6 por 4 horas)\n" +
+                "Aluguel de bikes: R$ 15/hora nos finais de semana", 620)
+            }
             );
             put(
                 "Feira do Água Verde",
                 new Elemento[] {
-                    new Elemento("TITLE", "Feira do Água Verde", 100),     
-                }
+                new Elemento("IMAGE","FeiraAguaVerde.jpg",0),
+                new Elemento("TITLE", "Feira do Água Verde", 100),
+                new Elemento("TEXT", "Conhecida carinhosamente como 'Feira Hippie', a Feira do Água Verde é um marco cultural desde 1979. Aos domingos, transforma a Praça João Paulo II num ecossistema de economia criativa, com forte compromisso ambiental e apoio aos artesãos locais.", 115),
+                new Elemento("SUBTITLE", "Sustentabilidade na Prática", 250),
+                new Elemento("TEXT", "Reciclagem: 100% dos resíduos são triados - cooperativas coletam 2 toneladas de materiais recicláveis mensalmente", 270),
+                new Elemento("TEXT", "Energia limpa: 30% dos expositores usam painéis solares em suas bancas desde 2021", 350),
+                new Elemento("SUBTITLE", "Experiência Completa", 440),
+                new Elemento("TEXT", "Artesanato sustentável: Bonecos de fibra natural, bijuterias com sementes e ecojoias\n" +
+                "Comida consciente: Lanches orgânicos, cucas coloniais e o famoso pão com mortadela gigante\n" +
+                "Viveiro de mudas: Espaço permanente para doação de árvores nativas\n" +
+                "Atrações: Música ao vivo das 10h às 13h no palco de madeira reciclada", 460),
+                new Elemento("SUBTITLE", "Planejando Sua Visita", 600),
+                new Elemento("TEXT", "Horário: Domingos das 7h às 15h (pico às 11h)\n" +
+                "Local: Praça João Paulo II (estacionamento no Shopping Água Verde)\n" +
+                "Dicas: Leve moeda trocada e sua caneca reutilizável para drinks", 620)
+    }
             );
             put(
-                "Feira do Batel",
+               "Feira do Batel", 
                 new Elemento[] {
-                    new Elemento("TITLE", "Feira do Batel", 100),
-                }
+                new Elemento("IMAGE","FeiraBatel.jpg",0),
+                new Elemento("TITLE", "Feira do Batel", 100),
+                new Elemento("TEXT", "A Feira do Batel é o epicentro gastronômico sofisticado de Curitiba, realizada todo sábado na charmosa Praça da Ucrânia. Desde 2012, combina produtos gourmet com práticas sustentáveis, sendo pioneira na valorização de produtores locais e embalagens ecológicas.", 115),
+                new Elemento("SUBTITLE", "Gastronomia Sustentável", 250),
+                new Elemento("TEXT", "Produtos orgânicos: 70% dos hortifrútis vêm de pequenos produtores da região metropolitana, com certificação agroecológica", 270),
+                new Elemento("TEXT", "Embalagens: Redução de plásticos - os food trucks utilizam recipientes biodegradáveis desde 2018", 350),
+                new Elemento("SUBTITLE", "Experiência Gourmet", 440),
+                new Elemento("TEXT", "Delicatessen: Queijos artesanais do Paraná e Minas, vinhos de pequenas vinícolas nacionais\n" +
+                "Chefs Convidados: Aos sábados, demonstrações com ingredientes locais (programação no Instagram @feiradobatel)\n" +
+                "Café Especial: Bistrô com grãos de torra local e copos retornáveis", 460),
+                new Elemento("SUBTITLE", "Informações Úteis", 600),
+                new Elemento("TEXT", "Horário: Sábados das 8h30 às 14h (melhor horário: 10h-12h)\n" +
+                "Local: Praça da Ucrânia - Batel (estacionamento no Shopping Batel)\n" +
+                "Dica: Leve sua ecobag e caneca reutilizável", 620)
+    }
             );
         }};
 
@@ -193,8 +256,9 @@ Botao[] botoes = {new Botao("Instruçoes", 450, 500, 1), new Botao("Opçoes", 45
 void draw() {
   background(#EAF6FF); // Fundo branco
   if(telaAtual == 0){
+    image(loadImage("./imagens/CuritibaTelaInicial.png"), 0, 0, width, height);
     textSize(55);
-    fill(#69EA36);
+    fill(#131C15);
     text("EcoTrip Curitiba", 350, 200);
     for(Botao botao:botoes){
       botao.display(flagMousePressed);
@@ -228,7 +292,26 @@ void draw() {
     rectMode(CORNER);
   }else if(telaAtual == 2){
     boolean hovering = false; // Controla se o mouse está sobre alguma categoria
-
+    if (categoriaAtiva == "Consumo Consciente")
+      {
+        image(loadImage("./imagens/MercadoMunicipal.jpg"), 0, 0, width, height);
+      }
+     else if(categoriaAtiva == "Turismo Cultural")
+     {
+       image(loadImage("./imagens/MuseuEgipicio.jpg"), 0, 0, width, height);
+     }
+     else if(categoriaAtiva == "Parques e Áreas Verdes")
+     {
+       image(loadImage("./imagens/Parques.jpg"), 0, 0, width, height);
+     }
+     else if(categoriaAtiva == "Alimentação Sustentavel")
+     {
+       image(loadImage("./imagens/Feira.jpg"), 0, 0, width, height);
+     }
+     else if(categoriaAtiva == "Transporte Ecológico")
+     {
+       image(loadImage("./imagens/Transporte.jpg"), 0, 0, width, height);
+     }
     // Renderiza os botões das categorias
     for (int i = 0; i < categorias.length; i++) {
       int y = itemOffsetY + i * (itemAltura + itemEspaco);
@@ -273,18 +356,27 @@ void draw() {
       cartaoAtivo.display();
     }
   }else if(telaAtual == 3){
-     image(loadImage("./imagens/flecha.png"), 20, 20, 20, 20);
      if(mouseEstaSobre(20, 40, 20, 40) && flagMousePressed) telaAtual = 2;
+      // Aplica a translação de rolagem
+      pushMatrix();
+      translate(0, scrollY);
      for(Elemento elemento: artigoAtivo){
        elemento.interpretarElemento();
      }
-     
-     
+      popMatrix();
+      image(loadImage("./imagens/flecha.png"), 20, 20, 20, 20);
+ 
   }
   
-
   // Reset da flag de clique
   flagMousePressed = false;
+}
+void mouseWheel(MouseEvent event) {
+  float e = event.getCount();
+  scrollY += -e * scrollSpeed;
+  
+  // Limites opcionais
+  scrollY = constrain(scrollY, -3000, 0);  // ajusta conforme o conteúdo
 }
 
 void movieEvent(Movie m) {

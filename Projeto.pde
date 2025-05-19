@@ -75,8 +75,19 @@ void setup() {
                 new Elemento[] {
                     new Elemento("TITLE", "Empório Kaminski", 100),
                     new Elemento("TEXT", "Um dos estabelecimentos mais icônicos de Curitiba, o Empório Kaminski une quase um século de história familiar com uma experiência gastronômica diversificada. Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família"+
-                    " Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família", 110),
-                }
+                    " Fundado em 1930, é referência em panificação artesanal, café colonial e serviços para eventos, mantendo viva a tradição polonesa da família", 115),
+                    new Elemento("SUBTITLE", "O Que Você Precisa Saber:", 250),
+                    new Elemento("TEXT", "Origem Humilde: Tudo começou com Alexandre Kaminski, um imigrante polonês que, em 1930, fundou a Padaria Universal. Na época, as entregas eram feitas com carroças puxadas por cavalos, que percorriam Curitiba com pães, leite e biscoitos",270),
+                    new Elemento("TEXT", "Evolução: De carroças a Kombis, e depois a um empório moderno, a família adaptou-se às mudanças sem perder a essência. O nome \"Kaminski\" só foi adotado em 1994, após décadas como Padaria Universal e Kamille", 350),
+                    new Elemento("SUBTITLE", "O Que Experimentar?", 440),
+                    new Elemento ("TEXT", "Rocambole de Doce de Leite: Receita original da década de 1960, criada por Maresca (esposa de Nelson), ainda irresistível\n" +
+                    "Cardápio Variado: Mais de 600 itens, incluindo croissants, tortas finas, tapiocas, pizzas e um buffet de café colonial com doces e salgados\n"+ 
+                    "Cestas Especiais: Opções para presentear, como a \"Cesta Kaminski\" (R$ 129,80), com pães, frios e geleias",460),
+                    new Elemento("SUBTITLE", "Unidades", 600),
+                    new Elemento ("TEXT", "Empório Kaminski (Av. Sete de Setembro, 6355): Funciona como mercearia, restaurante e espaço para eventos. Abre diariamente das 6h30 às 22h\n"+
+                    "Kaminski Padaria (Av. Iguaçu, 2735): Focada em produção de pães. Horário: 6h30 às 20h (segunda a sábado)",620)
+ 
+              }
             );
             put(
                 "Feira do Largo da Ordem",

@@ -92,21 +92,58 @@ void setup() {
             put(
                 "Feira do Largo da Ordem",
                 new Elemento[] {
-                    new Elemento("TITLE", "Feira do Largo da Ordem", 100),
+                new Elemento("TITLE", "Feira do Largo da Ordem", 100),
+                new Elemento("TEXT", "A Feira do Largo da Ordem é a feira de artesanato mais tradicional de Curitiba, realizada todo domingo no histórico Largo da Ordem. Com mais de 40 anos de existência, reúne artesãos, músicos e comerciantes em um ambiente cultural vibrante.", 115),
+                new Elemento("SUBTITLE", "O Que Você Precisa Saber:", 250),
+                new Elemento("TEXT", "História: Criada na década de 1970 como pequena feira de antiguidades, transformou-se em importante ponto turístico e cultural da cidade, preservando o charme do centro histórico.", 270),
+                new Elemento("TEXT", "Localização: Ocorre no Largo da Ordem, coração do Setor Histórico, rodeado por construções coloniais como a Igreja da Ordem Terceira de São Francisco das Chagas (1737).", 350),
+                new Elemento("SUBTITLE", "O Que Encontrar?", 440),
+                new Elemento("TEXT", "Artesanato: Peças em madeira, cerâmica, couro e técnicas tradicionais\n" +
+                "Comidas Típicas: Barreado, pão com linguiça, pierogi e doces caseiros\n" +
+                "Cultura: Apresentações musicais e intervenções artísticas durante todo o dia", 460),
+                new Elemento("SUBTITLE", "Informações Práticas", 600),
+                new Elemento("TEXT", "Horário: Domingos das 9h às 14h\n" +
+                "Local: Largo Coronel Enéas / Rua Kellers, Setor Histórico\n" +
+                "Dica: Chegue cedo para aproveitar melhor e evitar aglomerações", 620)
                 }
             );
             put(
-                "Museu Oscar Niemeyer",
-                new Elemento[] {
-                    new Elemento("TITLE", "Museu Oscar Niemeyer", 100),
+              "Museu Oscar Niemeyer",
+              new Elemento[] {
+              new Elemento("TITLE", "Museu Oscar Niemeyer", 100),
+              new Elemento("TEXT", "Conhecido como 'Museu do Olho' por sua arquitetura icônica, o MON é o maior museu de arte da América Latina. Projetado por Oscar Niemeyer, reúne exposições nacionais e internacionais em um espaço de 35 mil m².", 115),
+              new Elemento("SUBTITLE", "Destaques do Museu", 250),
+              new Elemento("TEXT", "Arquitetura: O anexo em forma de olho suspenso é símbolo de Curitiba, com 30m de altura e estrutura futurista que dialoga com o prédio principal.", 270),
+              new Elemento("TEXT", "Acervo: Mais de 7 mil obras, incluindo arte contemporânea, asiática e africana, além de exposições temporárias de artistas renomados.", 350),
+              new Elemento("SUBTITLE", "Experiência do Visitante", 440),
+              new Elemento("TEXT", "Coleções Permanentes: Arte paranaense (Poty Lazzarotto), obras de Tarsila do Amaral e Andy Warhol\n" +
+              "Jardim das Esculturas: Área externa com obras integradas à natureza\n" +
+              "Programação Cultural: Oficinas, palestras e visitas mediadas para todas as idades", 460),
+              new Elemento("SUBTITLE", "Informações Úteis", 600),
+              new Elemento("TEXT", "Horário: Terça a domingo, 10h às 18h\n" +
+              "Ingressos: R$30 (inteira) / R$15 (meia) - Grátis às quartas\n" +
+              "Localização: Rua Marechal Hermes, 999 - Centro Cívico", 620)
                 }
             );
             put(
-                "Solar do Rosário",
-                new Elemento[] {
-                    new Elemento("TITLE", "Solar do Rosário", 100),
-                }
-            );
+              "Solar do Rosário", 
+              new Elemento[] {
+              new Elemento("TITLE", "Solar do Rosário", 100),
+              new Elemento("TEXT", "O Solar do Rosário é um dos espaços culturais mais charmosos de Curitiba, instalado em um casarão histórico do século XIX. Combinando arquitetura colonial, jardins encantadores e programação cultural diversificada, é um refúgio de arte e história no coração da cidade.", 115),
+              new Elemento("SUBTITLE", "História e Arquitetura", 250),
+              new Elemento("TEXT", "O casarão foi construído em 1890 e restaurado nos anos 1990, mantendo características originais como pisos de madeira, vitrais e a capela particular. O nome homenageia Nossa Senhora do Rosário, cuja imagem adorna o local.", 270),
+              new Elemento("TEXT", "Os jardins foram projetados por Burle Marx, com espécies nativas e um caramanchão que se tornou cenário para eventos.", 350),
+              new Elemento("SUBTITLE", "O Que Oferece", 440),
+              new Elemento("TEXT", "Galeria de Arte: Exposições temporárias de artistas brasileiros e internacionais\n" +
+              "Café Cultural: Cardápio com quitutes e chás servidos em louças vintage\n" +
+              "Loja de Artesanato: Peças exclusivas de artistas locais e livros de arte\n" +
+              "Cursos: Oficinas de pintura, fotografia e história da arte", 460),
+              new Elemento("SUBTITLE", "Visitação", 600),
+              new Elemento("TEXT", "Horário: Terça a sábado das 10h às 19h | Domingo 10h-14h\n" +
+              "Endereço: Rua Duque de Caxias, 4 - Centro Histórico\n" +
+              "Entrada: Gratuita (exposições temporárias podem ter ingresso separado)", 620)
+    }
+);
             put(
                 "Jardim Botânico",
                 new Elemento[] {
